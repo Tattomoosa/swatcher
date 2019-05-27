@@ -6,6 +6,28 @@
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@simonwep/pickr/-/pickr-0.5.1.tgz#675a6e0e348bb02869d3c8e21e3f9f2b7acb72aa"
 
+clipboard@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
+  dependencies:
+    good-listener "^1.2.2"
+    select "^1.1.2"
+    tiny-emitter "^2.0.0"
+
+delegate@^3.1.2:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
+
+good-listener@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
+  dependencies:
+    delegate "^3.1.2"
+
+select@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+
 tingle.js@^0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/tingle.js/-/tingle.js-0.15.1.tgz#5e2a4ddefe0b274fe28acc2a5d2940c25c076352"
@@ -13,3 +35,7 @@ tingle.js@^0.15.1:
 tingle@^0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/tingle/-/tingle-0.0.0.tgz#1de23489affd8e59ed345d9c6f2850af743ec43b"
+
+tiny-emitter@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"

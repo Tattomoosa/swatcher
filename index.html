@@ -13,6 +13,9 @@
 						<canvas id="swatch" width="100px" height="60px"></canvas>
 						<img src="" id="swatchimg"/>
 					</div>
+					<h6>
+					right-click, copy/save
+					</h6>
 					<span class="button-container">
 						<input
 							class="save button"
@@ -21,6 +24,7 @@
 						</input>
 						<input
 							class="copy button"
+							data-clipboard-target="#swatchimg"
 							value="COPY"
 							type="button">
 						</input>
@@ -36,6 +40,20 @@
 				</a>
 			</h6>
 			<input type="button" class="info" value="i" onclick="infoModal.open()"></input>
+		</div>
+		<div class="info-text">
+			<h1>About Swatch.in</h1>
+			<p>
+				Swatch.in is a tiny tool that helps you share color swatches by
+				generating little thumbnail images.
+				Simply right-click the thumbnail to copy or save the image.
+			</p>
+			<p>
+				Want a copy button? Me too.
+				There's no copy button because browsers don't let you copy images besides
+				in the right click menu.
+				If you know of a way to do it, let me know and I'll add it.
+			</p>
 		</div>
 	</body>
 	<script src="./index.js"></script>

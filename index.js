@@ -1,6 +1,7 @@
 import '/swatches.css'
 import Pickr from '/node_modules/@simonwep/pickr/dist/pickr.min'
 import tingle from './node_modules/tingle.js/dist/tingle'
+import clipboard from './node_modules/clipboard/dist/clipboard.min'
 
 const name = 'Swatch.in'
 
@@ -8,14 +9,17 @@ const white = '#cfcfcf'
 const black = '#222222'
 let defaultColor = '#2A9663'
 
+const uiColorPivotValue = 58.0
 const infoElement = document.querySelector('.info');
 const backgroundStyle = document.body.style;
 const titleStyle = document.querySelector('h1').style;
 const infoStyle = infoElement.style;
 const swatch = document.querySelector('#swatch');
+const containerStyle = document.querySelector('.container').style
 const swatchImg = document.querySelector('#swatchimg');
-const madeByStyle = document.querySelector('h6').style;
 const canvasContainerStyle = document.querySelector('.canvas-container').style
+const textFields = document.querySelectorAll('h6');
+let buttons = document.querySelectorAll('input[type="button"]')
 let lastPaint = 0
 
 let urlColors = getURLVars()
@@ -25,14 +29,24 @@ const infoModal = new tingle.modal({
 	closeMethods: ['overlay', 'button', 'escape'],
 	closeLabel: 'Close',
 })
-infoModal.setContent(
-	'<h1>About ' + name + '</h1>' +
-	'<br/>' + 
-	'<p>' +
-	name +
-	' is a tiny tool that helps you share color swatches by generating little thumbnail images.' +
-	'</p>'
-)
+
+console.log(clipboard)
+console.log(clipboard.isSupported())
+let clip = new clipboard('.copy')
+clip.on('success', (e) => {
+	console.log("SUCCESS")
+	console.info('Action: ', e.action)
+	console.info('Text: ', e.text)
+	console.info('Trigger: ', e.trigger)
+	e.clearSelection()
+})
+clip.on('error', () => console.log("failure"))
+
+const infoTextElement = document.querySelector('.info-text')
+const infoText = infoTextElement.innerHTML
+infoTextElement.parentNode.removeChild(infoTextElement)
+
+infoModal.setContent(infoText)
 infoElement.onclick = () => infoModal.open()
 
 const pickr = Pickr.create({
@@ -62,6 +76,7 @@ const pickr = Pickr.create({
 })
 
 pickr.on('init', (...args) => {
+	buttons = document.querySelectorAll('input[type="button"]')
 	let color = args[0]._color
 	updateUi(color)
 }).on('change', (...args) => {
@@ -70,18 +85,32 @@ pickr.on('init', (...args) => {
 })
 
 function updateUi(color) {
-	console.log(color)
 	backgroundStyle.backgroundColor = color.toHEXA();
 	let textColor = white
-	if (color.v > 58.0)
+	let altColor = black
+	if (color.v > uiColorPivotValue) {
 		textColor = black
+		altColor = white
+	}
 	titleStyle.color = textColor
 	infoStyle.color = textColor
 	infoStyle.borderColor = textColor
-	madeByStyle.color = textColor
+	for (let i = 0; i < textFields.length; ++i)
+		textFields[i].style.color = textColor
 	canvasContainerStyle.backgroundColor = textColor
+	containerStyle.borderColor = textColor
 	window.cancelAnimationFrame(lastPaint)
 	lastPaint = window.requestAnimationFrame(() => updateSwatch(color))
+
+	for (let i = 0; i < buttons.length; ++i) {
+		let button = buttons[i]
+		if (!button.classList.contains('active'))
+			button.style.background = 'transparent'
+		else
+			button.style.background = altColor
+		button.style.color = textColor
+		button.style.borderColor = textColor
+	}
 }
 
 function updateSwatch(color) {
@@ -93,9 +122,15 @@ function updateSwatch(color) {
 	c.fillStyle = color.toHEXA()
 	c.fill()
 	c.font = "14px Arial"
-	c.fillStyle = color.v < 80.0 ? white : black;
+	c.fillStyle = color.v < uiColorPivotValue ? white : black;
 	c.fillText(color.toHEXA(), 10, height - 10);
 	swatchImg.src = c.canvas.toDataURL('image/png')
+	swatchImg.setAttribute('download', color.toHEXA() + '.png')
+	swatchImg.setAttribute('title', color.toHEXA() + '.png')
+	swatchImg.setAttribute('alt', color.toHEXA() + '.png')
+	// swatchImg['data-clipboard-text'] = c.canvas.toDataURL('image/png')
+	// swatchImg.setAttribute('data-clipboard-text', color.toHEXA())
+	// swatchImg.value = color.toHEXA()
 }
 
 function copyCanvasAsImage() {

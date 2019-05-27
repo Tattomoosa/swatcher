@@ -43,6 +43,8 @@ h6 {
   height: 60px;
   width: 100px;
   transition: background-color 1.2s;
+  margin-left: 20px;
+  margin-bottom: 3px;
 }
 
 #swatch {
@@ -58,9 +60,21 @@ h6 {
 
 .button-container {
   position: absolute;
-  top: 22px;
-  right: 10px;
+  top: 20px;
+  right: 12px;
   width: 50px;
+}
+
+.pcr-app input.pcr-type {
+  background: transparent;
+  /* transition: color 1.2s, border 1.2s, background 1.2s; */
+  transition: color 1.2s, border 1.2s, background 1.2s;
+  border: 1px solid black;
+}
+
+.pcr-app .pcr-interaction input.pcr-type.active {
+  transition: color 1.2s, border 1.2s, background 0.2s;
+  background: grey;
 }
 
 .button {
@@ -72,12 +86,14 @@ h6 {
   text-align: center;
   cursor: pointer;
   color: #75797e;
-  background: #f1f3f4;
+  border: 1px solid black;
+  background: transparent;
   border-radius: .15em;
-  transition: all .15s;
+  transition: color 1.2s, border 1.2s;
   padding: .45em .5em;
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
+  display: none;
 }
 
 .pcr-app.visible {
@@ -92,9 +108,10 @@ h6 {
 }
 
 .swatch-container {
+  /* font-size: 12px; */
   display: inline-block;
   text-align: left;
-  padding: 20px 20px;
+  padding: 15px 20px;
   padding-left: 7px;
   border-radius: 2px;
   margin: auto;
@@ -114,6 +131,9 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -70%);
+  border: .5px solid white;
+  transition: border 1.2s;
+  padding-right: 5px;
 }
 
 body {
@@ -128,7 +148,7 @@ body {
 h1 {
   margin: 0;
   font-family: 'Londrina Outline', cursive;
-  font-size: 76px;
+  font-size: 80px;
   line-height: 120%;
   font-weight: normal;
   transition: color 1.2s;
@@ -144,13 +164,13 @@ h1 {
   color: white;
   border-radius: 50%;
   background: transparent;
-  font-size: 10px;
+  font-size: 12px;
   position: absolute;
-  width: 16px;
-  height: 16px;
-  bottom: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
   right: 10px;
-  padding-left: 6px;
+  padding-left: 8px;
   transition: color 1.2s, border-color 1.2s;
 }
 
