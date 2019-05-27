@@ -1,0 +1,9 @@
+{
+  "name": "swatches",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@simonwep/pickr": "^0.5.1"
+  }
+}
