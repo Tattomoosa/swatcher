@@ -1,20 +1,39 @@
 import '/swatches.css'
 import Pickr from '/node_modules/@simonwep/pickr/dist/pickr.min'
+import tingle from './node_modules/tingle.js/dist/tingle'
 
-const white = 'white'
-const black = '#444'
-const defaultColor = '#2A9663'
+const name = 'Swatch.in'
 
+const white = '#cfcfcf'
+const black = '#222222'
+let defaultColor = '#2A9663'
+
+const infoElement = document.querySelector('.info');
 const backgroundStyle = document.body.style;
 const titleStyle = document.querySelector('h1').style;
-const infoStyle = document.querySelector('.info').style;
+const infoStyle = infoElement.style;
 const swatch = document.querySelector('#swatch');
+const swatchImg = document.querySelector('#swatchimg');
+const madeByStyle = document.querySelector('h6').style;
+const canvasContainerStyle = document.querySelector('.canvas-container').style
 let lastPaint = 0
-/*
-document.querySelector('.copy-button')
-	.addEventListener('click', () => copyCanvasAsImage(swatch), false)
-*/
 
+let urlColors = getURLVars()
+if (urlColors != "") defaultColor = urlColors[0]
+
+const infoModal = new tingle.modal({
+	closeMethods: ['overlay', 'button', 'escape'],
+	closeLabel: 'Close',
+})
+infoModal.setContent(
+	'<h1>About ' + name + '</h1>' +
+	'<br/>' + 
+	'<p>' +
+	name +
+	' is a tiny tool that helps you share color swatches by generating little thumbnail images.' +
+	'</p>'
+)
+infoElement.onclick = () => infoModal.open()
 
 const pickr = Pickr.create({
 	el: '.color-picker',
@@ -51,16 +70,16 @@ pickr.on('init', (...args) => {
 })
 
 function updateUi(color) {
+	console.log(color)
 	backgroundStyle.backgroundColor = color.toHEXA();
-	if (color.v < 80.0) {
-		titleStyle.color = white
-		infoStyle.color = white
-		infoStyle.borderColor = white
-	} else {
-		titleStyle.color = black
-		infoStyle.color = black
-		infoStyle.borderColor = black
-	}
+	let textColor = white
+	if (color.v > 58.0)
+		textColor = black
+	titleStyle.color = textColor
+	infoStyle.color = textColor
+	infoStyle.borderColor = textColor
+	madeByStyle.color = textColor
+	canvasContainerStyle.backgroundColor = textColor
 	window.cancelAnimationFrame(lastPaint)
 	lastPaint = window.requestAnimationFrame(() => updateSwatch(color))
 }
@@ -76,6 +95,7 @@ function updateSwatch(color) {
 	c.font = "14px Arial"
 	c.fillStyle = color.v < 80.0 ? white : black;
 	c.fillText(color.toHEXA(), 10, height - 10);
+	swatchImg.src = c.canvas.toDataURL('image/png')
 }
 
 function copyCanvasAsImage() {
@@ -91,17 +111,6 @@ function copyCanvasAsImage() {
 	document.body.removeChild(div)
 }
 
-function selectText(element) {
-	var doc = document;
-	if (doc.body.createTextRange) {
-		var range = document.body.createTextRange();
-		range.moveToElementText(element);
-		range.select();
-	} else if (window.getSelection) {
-		var selection = window.getSelection();
-		var range = document.createRange();
-		range.selectNodeContents(element);
-		selection.removeAllRanges();
-		selection.addRange(range);
-	}
+function getURLVars() {
+	return new URL(window.location.href).pathname.split('/').slice(1)
 }

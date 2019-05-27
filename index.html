@@ -4,21 +4,38 @@
 	</head>
 	<body>
 		<div class="center container">
-			<input type="button" class="info" value="i"></input>
 			<div class="align-left">
-				<h1>Swatcher</h1>
+
+				<h1>Swatch.in</h1>
+
 				<div class="swatch-container">
+					<div class="canvas-container">
 						<canvas id="swatch" width="100px" height="60px"></canvas>
-						<!--
+						<img src="" id="swatchimg"/>
+					</div>
+					<span class="button-container">
 						<input
-							class="copy-button"
-							type="button"
-							value="+">
+							class="save button"
+							value="SAVE"
+							type="button">
 						</input>
-						-->
+						<input
+							class="copy button"
+							value="COPY"
+							type="button">
+						</input>
+					</span>
 				</div>
+
 			</div>
 			<div class="color-picker"></div>
+			<h6>
+				Made with &hearts; by
+				<a href="https://mattotousa.com">
+					Matt O'Tousa
+				</a>
+			</h6>
+			<input type="button" class="info" value="i" onclick="infoModal.open()"></input>
 		</div>
 	</body>
 	<script src="./index.js"></script>

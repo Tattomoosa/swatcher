@@ -5,3 +5,11 @@
 "@simonwep/pickr@^0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@simonwep/pickr/-/pickr-0.5.1.tgz#675a6e0e348bb02869d3c8e21e3f9f2b7acb72aa"
+
+tingle.js@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/tingle.js/-/tingle.js-0.15.1.tgz#5e2a4ddefe0b274fe28acc2a5d2940c25c076352"
+
+tingle@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/tingle/-/tingle-0.0.0.tgz#1de23489affd8e59ed345d9c6f2850af743ec43b"
