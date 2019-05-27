@@ -8,5 +8,8 @@
     "clipboard": "^2.0.4",
     "tingle": "^0.0.0",
     "tingle.js": "^0.15.1"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }
