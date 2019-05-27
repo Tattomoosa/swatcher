@@ -1179,7 +1179,9 @@ function updateUi(color) {
     altColor = white;
   }
 
-  titleStyle.color = textColor;
+  titleStyle.color = color.toHEXA();
+  titleStyle['-webkit-text-stroke'] = '1px ' + textColor;
+  titleStyle['text-stroke'] = '1px ' + textColor;
   infoStyle.color = textColor;
   infoStyle.borderColor = textColor;
 
@@ -1265,7 +1267,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37279" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33321" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

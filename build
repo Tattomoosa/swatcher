@@ -1,3 +1,6 @@
 #!/bin/bash
 
-parcel build index.html --public-url /swatcher/ && git subtree push --prefix dist origin gh-pages
+parcel build index.html --public-url /swatcher/ &&
+  git add * &&
+  git commit -m $1 &&
+  git subtree push --prefix dist origin gh-pages

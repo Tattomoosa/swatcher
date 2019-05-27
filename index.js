@@ -92,7 +92,9 @@ function updateUi(color) {
 		textColor = black
 		altColor = white
 	}
-	titleStyle.color = textColor
+	titleStyle.color = color.toHEXA();
+	titleStyle['-webkit-text-stroke'] = '1px ' + textColor
+	titleStyle['text-stroke'] = '1px ' + textColor
 	infoStyle.color = textColor
 	infoStyle.borderColor = textColor
 	for (let i = 0; i < textFields.length; ++i)

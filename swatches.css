@@ -147,14 +147,16 @@ body {
 
 h1 {
   margin: 0;
-  font-family: 'Londrina Outline', cursive;
+  font-family: 'Londrina Solid', cursive;
   font-size: 80px;
   line-height: 120%;
   font-weight: normal;
-  transition: color 1.2s;
+  transition: color 1.2s, text-stroke 1.2s, -webkit-text-stroke 1.2s;
   position: relative;
   top: 8px;
   display: inline;
+  text-stroke: 1px white;
+  -webkit-text-stroke: 1px white;
 }
 
 .info {
