@@ -66,6 +66,11 @@ h6 {
   width: 50px;
 }
 
+.pcr-app .pcr-interaction input:hover {
+  filter: none;
+  transform: scale3d(1.05,1.05,1.05);
+}
+
 .pcr-app input.pcr-type {
   background: transparent;
   /* transition: color 1.2s, border 1.2s, background 1.2s; */
@@ -152,7 +157,7 @@ h1 {
   font-size: 80px;
   line-height: 120%;
   font-weight: normal;
-  transition: color 1.2s, text-stroke 1.2s, -webkit-text-stroke 1.2s;
+  transition: text-stroke 1.2s, -webkit-text-stroke 1.2s;
   position: relative;
   top: 8px;
   display: inline;
