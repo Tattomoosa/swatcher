@@ -1,7 +1,9 @@
 import "/styles.css";
-import Pickr from "/node_modules/@simonwep/pickr/dist/pickr.min";
+// import Pickr from "/node_modules/@simonwep/pickr/dist/pickr.min";
+import Pickr from "@simonwep/pickr";
 import tingle from "./node_modules/tingle.js/dist/tingle";
-import clipboard from "./node_modules/clipboard/dist/clipboard.min";
+// import clipboard from "./node_modules/clipboard/dist/clipboard.min";
+import clipboard from "clipboard";
 
 const white = "#cfcfcf";
 const black = "#222222";
