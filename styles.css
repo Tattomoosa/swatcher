@@ -20,6 +20,7 @@ a:hover {
 
 h6 {
   line-height: 10px;
+  font-size: 10px;
   margin: 0;
   font-weight: normal;
   font-family: sans-serif;
@@ -184,6 +185,8 @@ h1 {
     bottom: 0;
     right: 0;
     overflow: hidden;
+    border-radius: 0;
+    border: none;
     transform: translate(0%, 0%);
   }
   .swatch-container {
@@ -191,10 +194,6 @@ h1 {
   }
   .container {
     max-width: 100%;
-  }
-  h6 {
-    position: absolute;
-    bottom: 10px;
   }
   .align-left {
     padding-top: 10vh;
@@ -214,4 +213,13 @@ h1 {
   h1 {
     font-size: 40px;
   }
+}
+
+.save-instructions {
+  padding-left: 6px;
+}
+
+.credits {
+  position: absolute;
+  bottom: 14px;
 }

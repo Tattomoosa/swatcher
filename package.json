@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "parcel serve",
+    "deploy": "./deploy.sh"
+  },
   "dependencies": {
     "@simonwep/pickr": "^0.5.1",
     "clipboard": "^2.0.4",
@@ -10,6 +14,7 @@
     "tingle.js": "^0.15.1"
   },
   "devDependencies": {
-    "cssnano": "^4.1.10"
+    "cssnano": "^4.1.10",
+    "parcel-bundler": "^1.12.5"
   }
 }
