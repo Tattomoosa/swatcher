@@ -5509,16 +5509,6 @@
   "resolved" "https://registry.npmjs.org/timsort/-/timsort-0.3.0.tgz"
   "version" "0.3.0"
 
-"tingle.js@^0.15.1":
-  "integrity" "sha512-rmyQek+isXKn1P/B7Igool7jAQD7+r4C135d55XDbA7yUF1kk6T9nfEeoOkXMQvvnbYizVsoj2H+RSd0cXf1Qg=="
-  "resolved" "https://registry.npmjs.org/tingle.js/-/tingle.js-0.15.1.tgz"
-  "version" "0.15.1"
-
-"tingle@^0.0.0":
-  "integrity" "sha1-HeI0ia/9jlntNF2cbyhQr3Q+xDs="
-  "resolved" "https://registry.npmjs.org/tingle/-/tingle-0.0.0.tgz"
-  "version" "0.0.0"
-
 "tiny-emitter@^2.0.0":
   "integrity" "sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q=="
   "resolved" "https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-2.1.0.tgz"

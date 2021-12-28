@@ -9,9 +9,7 @@
   },
   "dependencies": {
     "@simonwep/pickr": "^0.5.1",
-    "clipboard": "^2.0.4",
-    "tingle": "^0.0.0",
-    "tingle.js": "^0.15.1"
+    "clipboard": "^2.0.4"
   },
   "devDependencies": {
     "cssnano": "^5.0.14",

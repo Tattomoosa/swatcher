@@ -1,7 +1,7 @@
 import "/styles.css";
 // import Pickr from "/node_modules/@simonwep/pickr/dist/pickr.min";
 import Pickr from "@simonwep/pickr";
-import tingle from "./node_modules/tingle.js/dist/tingle";
+// import tingle from "./node_modules/tingle.js/dist/tingle";
 // import clipboard from "./node_modules/clipboard/dist/clipboard.min";
 import clipboard from "clipboard";
 
@@ -26,10 +26,12 @@ let lastPaint = 0;
 let urlColors = getURLVars();
 if (urlColors != "") defaultColor = urlColors[0];
 
+/*
 const infoModal = new tingle.modal({
   closeMethods: ["overlay", "button", "escape"],
   closeLabel: "Close",
 });
+*/
 
 console.log(clipboard);
 console.log(clipboard.isSupported());
@@ -43,12 +45,12 @@ clip.on("success", (e) => {
 });
 clip.on("error", () => console.log("failure"));
 
-const infoTextElement = document.querySelector(".info-text");
-const infoText = infoTextElement.innerHTML;
-infoTextElement.parentNode.removeChild(infoTextElement);
+// const infoTextElement = document.querySelector(".info-text");
+// const infoText = infoTextElement.innerHTML;
+// infoTextElement.parentNode.removeChild(infoTextElement);
 
-infoModal.setContent(infoText);
-infoElement.onclick = () => infoModal.open();
+// infoModal.setContent(infoText);
+// infoElement.onclick = () => infoModal.open();
 
 const pickr = Pickr.create({
   el: ".color-picker",
