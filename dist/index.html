@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Londrina+Solid&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/swatcher.e31bb0bc.css"></head>
+	<body>
+		<div class="center container">
+			<div class="align-left">
+
+				<h1>Swatcher</h1>
+
+				<div class="swatch-container">
+					<div class="canvas-container">
+						<canvas id="swatch" width="100px" height="60px"></canvas>
+						<img src="" id="swatchimg">
+					</div>
+					<h6 class="save-instructions">
+					right-click to copy/save
+					</h6>
+					<span class="button-container">
+						<input class="save button" value="SAVE" type="button">
+						
+						<input class="copy button" data-clipboard-target="#swatchimg" value="COPY" type="button">
+						
+					</span>
+				</div>
+
+			</div>
+			<div class="color-picker"></div>
+			<input type="button" class="info" value="i" onclick="infoModal.open()">
+		</div>
+		<h6 class="credits">
+			Made with &hearts; by
+			<a href="https://mattotousa.dev">
+				Matt O'Tousa
+			</a>
+		</h6>
+		<div class="info-text">
+			<h1>About Swatcher</h1>
+			<p>
+				Swatcher is a tiny tool that helps you share color swatches by
+				generating little thumbnail images.
+				Simply right-click the thumbnail to copy or save the image.
+			</p>
+			<p>
+				Want a copy button? Me too.
+				There's no copy button because browsers don't let you copy images besides
+				in the right click menu.
+				If you know of a way to do it, let me know and I'll add it.
+			</p>
+		</div>
+	</body>
+	<script src="/swatcher.e31bb0bc.js"></script>
+</html>

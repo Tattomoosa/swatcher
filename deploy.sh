@@ -1,6 +1,6 @@
 #!/bin/bash
 # Updates the github.io page by building and pushing to the repo
-# TODO: This should be done with a GitHub action
+# TODO: This should be done with a GitHub action instead
 
 parcel build index.html --public-url /swatcher/ &&
   git add dist/* &&

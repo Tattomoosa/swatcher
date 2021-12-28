@@ -14,7 +14,7 @@
     "tingle.js": "^0.15.1"
   },
   "devDependencies": {
-    "cssnano": "^4.1.10",
-    "parcel-bundler": "^1.12.5"
+    "cssnano": "^5.0.14",
+    "parcel-bundler": "^1.9.4"
   }
 }
